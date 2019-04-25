@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     else
       flash.now[:danger] = 'Post could not be created'
       render 'new'
+    end
   end
 
   private
@@ -26,6 +27,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
-
 
 end
