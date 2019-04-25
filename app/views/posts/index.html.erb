@@ -1,0 +1,12 @@
+<h1>Posts</h1>
+<% if logged_in? %>
+  <%= link_to 'New post', new_post_path %><br>
+<% end %>
+
+<% @posts.each do |post| %>
+  <%= if logged_in? %>
+    <p> <%= post.user.name %></p>
+  <%end%>
+  <%= post.title%>
+  <%= post.body%>
+<% end %>%>
