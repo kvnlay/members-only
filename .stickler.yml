@@ -11,4 +11,4 @@ files:
     - 'db/seeds.rb'
     - 'app/helpers/sessions_helper.rb'
     - 'config/*'
-    - 'bin/*
+    - 'bin/*'
