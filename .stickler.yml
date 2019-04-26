@@ -12,3 +12,4 @@ files:
     - 'app/helpers/sessions_helper.rb'
     - 'config/*'
     - 'bin/*'
+    - 'app/controllers/sessions_contoller.rb'
