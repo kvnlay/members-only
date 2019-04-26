@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -7,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:info] = "Welcome!"
+      flash[:info] = 'Welcome!'
       redirect_to root_url
     else
       render 'new'
@@ -15,8 +17,9 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                  :password_confirmation)
+                                 :password_confirmation)
   end
 end
