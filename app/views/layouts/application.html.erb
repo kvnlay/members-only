@@ -11,7 +11,10 @@
 
   <body>
     <% if logged_in? %>
-    <%= link_to 'logout', logout_path %>
+    <%= link_to 'Logout', logout_path %>
+    <% else %>
+    <%= link_to 'Login ', login_path%>
+    <%= link_to '/ Signup', signup_path%>
     <% end %>
     <%= yield %>
   </body>
