@@ -7,9 +7,10 @@ module SessionsHelper
   end
 
   def remember(user)
-    user.remember
+    remember_token = User.new_token
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
+    user.update_attribute(:remember_digest, User.encrypt(remember_token))
   end
 
   def current_user
@@ -39,5 +40,4 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
-
 end
