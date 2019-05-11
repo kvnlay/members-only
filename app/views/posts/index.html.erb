@@ -1,0 +1,14 @@
+<h1>Posts</h1>
+<% if logged_in? %>
+  <%= link_to 'New post', new_post_path %><br>
+<% end %>
+
+<% @posts.each do |post| %>
+  <% if logged_in? %>
+    <p><%= post.user.name %></p>
+    <% else %>
+    <%= link_to 'Log in to see author', login_path %>
+  <% end %>
+  <h3><%= post.title%></h3><br>
+  <p><%= post.body%><p>
+<% end %>
